@@ -1,0 +1,262 @@
+/*
+Cryptology Monster
+
+$t@$h, QVLx Labs
+*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #F5F1ED;
+  color: #000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+   text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+header {
+  background-color: #f4f0ec;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  color: #750046;
+  font-size: 14px;
+}
+
+#signature {
+  font-size: 18px;
+  margin: 0;
+}
+
+#qlink {
+  color: #7a004e;
+  text-decoration: underline;
+}
+
+#qlink:hover {
+  color: #005052;
+}
+
+#notice {
+  color: #2f4f4f;
+  font-size: 14px;
+}
+
+@keyframes swivel {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.logo-wrapper {
+  display: inline-block;
+  min-width: 144px;
+  min-height: 144px;
+  position: relative;
+  visibility: hidden;
+}
+
+.logo-wrapper.loaded {
+  visibility: visible;
+}
+
+.logo {
+  max-width: 144px;
+  display: block;
+  border-radius: 20px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+select, input, textarea, button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="number"] {
+  width: 70px;
+}
+
+#toolSelect {
+  border-color: #520039;
+  border-style: solid;
+  border-width: 2px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #520039;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #005052;
+}
+
+button.purge {
+  background-color: #750046;
+  margin: 0;
+}
+
+button.purge:hover {
+  background-color: #005052;
+}
+
+footer {
+  padding: 15px;
+  font-size: 0.9em;
+  color: #555;
+  background-color: #f4f0ec;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: rgba(0,0,0,0.4);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fff0f3;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #520008;
+  width: 90%;
+  max-width: 500px;
+  color: #520008;
+  text-align: center;
+  border-radius: 8px;
+  animation: pop 0.3s ease-out;
+}
+
+#modalResultText {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+@keyframes pop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content button {
+  background-color: #520008;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 42px; /* 👈 Fix the height */
+  line-height: 1.4;  /* Keep vertical alignment smooth */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.modal-content button:hover {
+  background-color: #6e0010;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #520008;
+}
+
+.button-row {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-row button {
+  font-size: 1em;
+  border-radius: 8px;
+  background-color: #520039;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button-row button:hover {
+  background-color: #005052;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+  width: auto; /* Override the global width: 100% */
+  max-width: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto; /* Ensure checkbox doesn't stretch */
+  margin: 0;
+}
+
+input:disabled {
+  background-color: #eee;
+  color: #888;
+  cursor: not-allowed;
+}
+
+@media (min-width: 501px) {
+  .button-row button:not(:last-child) {
+    margin-right: 12px; /* space only on desktop */
+  }
+}
+
+/* Optional: slight tweaks for phones */
+@media (max-width: 500px) {
+  .button-row button {
+    width: 140px;
+  }
+}
