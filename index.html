@@ -1,0 +1,57 @@
+<!-- $t@$h -->
+<!-- QVLx Labs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="final_monster.jpg" as="image">
+  <link rel="icon" type="image/svg+xml" href="/final_monster.svg">
+  <title>Cryptology Monster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cryptology Monster</h1>
+    <div class="logo-wrapper" id="logoWrapper">
+      <img src="final_monster.jpg" alt="Cryptology Monster Logo" class="logo" id="monsterLogo">
+    </div>
+    <p id="signature"><b>By <a id="qlink" href="https://www.qvlx.com">QVLx Labs</a></b></p>
+    <p id="notice">This site never saves or sells your data</p>
+  </header>
+
+  <main>
+    <select id="toolSelect">
+      <option value="passwordGen">Strong Password Generator</option>
+      <option value="entropy">Shannon Entropy Calculator</option>
+      <option value="encrypt">Encrypt Text (AES-GCM)</option>
+      <option value="decrypt">Decrypt File (AES-GCM)</option>
+      <option value="passwordStrength">Password Strength Checker</option>
+      <option value="base64">Base64 Encode/Decode</option>
+      <option value="base32">Base32 Encode/Decode</option>\
+      <option value="hash">SHA-2 Hash Tool</option>
+      <option value="rsaKeypair">RSA Keypair Generator</option>
+      <option value="ed25519Keypair">Ed25519 Keypair Generator</option>
+    </select>
+
+    <div id="toolContainer"></div>
+    <button class="purge" onclick="purgeLocalData()">Purge Local Data</button>
+  </main>
+
+  <footer>
+    &copy; 2025 QVLx Labs. All rights reserved.
+  </footer>
+
+  <div id="resultModal" class="modal">
+    <div id="modalContent" class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalResultText"></p>
+      <button id="copyBtn" onclick="copyModalResult()">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <script src="script.js?v=1" defer></script>
+</body>
+</html>
